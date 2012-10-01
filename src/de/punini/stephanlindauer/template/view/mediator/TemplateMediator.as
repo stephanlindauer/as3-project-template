@@ -18,6 +18,8 @@ package de.punini.stephanlindauer.template.view.mediator
 		override public function onRegister():void
 		{
 			eventMap.mapListener(view, MouseEvent.CLICK, onClick);
+			// Listen to the context
+			// eventMap.mapListener(eventDispatcher, HelloFlashEvent.BALL_CLICKED, onSomeBallClicked);
 		}
 
 		protected function onClick(event:MouseEvent):void

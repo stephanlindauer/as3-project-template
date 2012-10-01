@@ -1,7 +1,5 @@
 package de.punini.stephanlindauer.template.controller.command
 {
-	import de.punini.stephanlindauer.template.view.view.TemplateView;
-
 	import org.robotlegs.base.ContextEvent;
 	import org.robotlegs.mvcs.Context;
 
@@ -13,16 +11,15 @@ package de.punini.stephanlindauer.template.controller.command
 	/**
 	 * @author stephan lindauer
 	 */
-	public class StartupCommand extends Command
+	public class TemplateCommand extends Command
 	{
 		[Inject]
-		public var event:ContextEvent;
+		public var event:TemplateEvent;
 		[Inject]
 		public var model:TemplateModel;
 
 		override public function execute():void
 		{
-			contextView.addChild(new TemplateView);
 			// model.changeStuff
 		}
 	}

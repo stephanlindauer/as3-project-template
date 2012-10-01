@@ -28,7 +28,6 @@ package de.punini.stephanlindauer.template
 
 		public function resizeHandler(e:Event):void
 		{
-			//
 		}
 	}
 }

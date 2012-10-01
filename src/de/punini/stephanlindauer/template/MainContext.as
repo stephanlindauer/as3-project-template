@@ -5,12 +5,12 @@ package de.punini.stephanlindauer.template
 	import de.punini.stephanlindauer.template.model.model.TemplateModel;
 	import de.punini.stephanlindauer.template.view.mediator.TemplateMediator;
 	import de.punini.stephanlindauer.template.view.view.TemplateView;
-	import flash.display.DisplayObjectContainer;
+
 	import org.robotlegs.base.ContextEvent;
 	import org.robotlegs.core.IContext;
 	import org.robotlegs.mvcs.Context;
 
-
+	import flash.display.DisplayObjectContainer;
 
 	/**
 	 * @author stephan lindauer
@@ -26,12 +26,13 @@ package de.punini.stephanlindauer.template
 		{
 			commandMap.mapEvent(ContextEvent.STARTUP, StartupCommand, ContextEvent, true);
 
+			injector.mapSingleton(TemplateModel);
 			injector.mapSingletonOf(ITemplateModel, TemplateModel);
 
 			mediatorMap.mapView(TemplateView, TemplateMediator);
 
 			super.startup();
-			
+
 			dispatchEvent(new ContextEvent(ContextEvent.STARTUP));
 		}
 	}
