@@ -1,7 +1,10 @@
 package de.punini.stephanlindauer.template
 {
+	import com.carlcalderon.arthropod.Debug;
+
 	import flash.display.Sprite;
 	import flash.events.Event;
+	import flash.events.IEventDispatcher;
 
 	/**
 	 * @author Leeke Bremer
@@ -12,7 +15,19 @@ package de.punini.stephanlindauer.template
 
 		public function Main():void
 		{
+			Debug.log("Main Class entered");
+			registerErrorListener();
 			init();
+		}
+
+		private function registerErrorListener():void
+		{
+			if (loaderInfo.hasOwnProperty("uncaughtErrorEvents"))
+				IEventDispatcher(loaderInfo["uncaughtErrorEvents"]).addEventListener("uncaughtError", handleErrorThrown);
+		}
+
+		private function handleErrorThrown(event:String):void
+		{
 		}
 
 		private function init():void
